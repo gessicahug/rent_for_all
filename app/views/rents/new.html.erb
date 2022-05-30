@@ -1,2 +1,7 @@
-<h1>Rents#new</h1>
-<p>Find me in app/views/rents/new.html.erb</p>
+<div class="container my-3 px-5">
+  <h2>Rent an Item</h2>
+  <%= simple_form_for [@item, @rent] do |f| %>
+    <%= f.association :item, selected: 'The Shawshank Redemption' %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>

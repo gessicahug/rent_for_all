@@ -1,2 +1,9 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<div class="container px-5 w-50">
+  <h2 class="ml-5 my-5">Create a new item</h2>
+  <%= simple_form_for @item do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.button :submit, class: 'btn btn-primary w-100' %>
+  <% end %>
+</div>
