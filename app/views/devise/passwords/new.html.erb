@@ -10,11 +10,13 @@
                   autofocus: true,
                   input_html: { autocomplete: "email" } %>
     </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Send me reset password instructions", class: "btn btn-secondary" %>
+    <div class="d-flex">
+      <div class="form-actions">
+        <%= f.button :submit, "Send me reset password instructions", class: "btn btn-secondary" %>
+      </div>
+      <%= render "devise/shared/links" %>
     </div>
   <% end %>
 
-  <%= render "devise/shared/links" %>
+
 </div>
