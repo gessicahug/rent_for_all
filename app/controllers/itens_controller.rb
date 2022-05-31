@@ -20,6 +20,10 @@ class ItensController < ApplicationController
     end
   end
 
+  def search
+    @search = params[:search][:query]
+  end 
+
   private
 
   def item_params
