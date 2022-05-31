@@ -12,6 +12,7 @@ class RentsController < ApplicationController
     @rent = Rent.new(rent_params)
     @rent.item = @item
     if @rent.save
+      @rent.item.rented = true
       redirect_to item_path(@item)
     else
       render :new
@@ -20,6 +21,7 @@ class RentsController < ApplicationController
 
   def destroy
     @rent = Rent.find(params[:id])
+    @rent.item.rented = false
     @rent.destroy
     redirect_to item_path(@rent.item)
   end
