@@ -1,2 +1,58 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="card-category">
+  <div>
+    <h1>Rent For All</h1>
+  </div>
+  <div class="">
+    <p>Find whatever you need</p>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <div class="d-flex">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p><%= link_to "Sign-in", new_user_session_path, class: "btn btn-primary w-40 m-2"%><%= link_to "More Info", "#", class: "btn btn-warning w-40 m-2"%></p>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-0">
+      <img src="https://picsum.photos/350" alt="item" class="p-4">
+    </div>
+
+  </div>
+</div>
+
+<div class="container mt-4 ">
+  <div class="d-flex">
+
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="p-4">
+        <h3>New Items For Rent Near You</h3>
+        <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <h2>Product name <%#= product.name %></h2>
+            <p>Product description <%#= product.info %></p>
+            <p>Price $99.00 <%#= product.price %> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="p-4">
+        <h3>For Limited Time</h3>
+        <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-product-infos">
+              <h2>Product name <%#= product.name %></h2>
+              <p>Product description <%#= product.info %></p>
+              <p>Price $99.00 <%#= product.price %> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
