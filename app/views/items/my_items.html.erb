@@ -1,0 +1,6 @@
+<h1>My items</h1>
+<% @items.each do |item| %>
+<%= item.name %>
+<%= link_to 'Edit', edit_item_path(item) %>
+<%= link_to 'remove', item_path(item), method: :delete, data: {confirm: 'Are you sure?'} %>
+<% end %>
