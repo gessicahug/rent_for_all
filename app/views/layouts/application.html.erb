@@ -13,9 +13,11 @@
   </head>
 
   <body>
-    <% if current_page?(root_path)  %>
+    <% if current_page?(new_user_password_path) || current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
+      <%= '' %>
+    <% else %>
       <%= render 'shared/navbar' %>
-      <%# acrescentar render na show e nos items  %>
+      <%# acrescentar render na show e nos items %>
     <% end %>
     <%= yield %>
   </body>
