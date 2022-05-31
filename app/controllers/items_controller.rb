@@ -1,6 +1,7 @@
-class ItensController < ApplicationController
+class ItemsController < ApplicationController
+  before_action :set_user, only: %i[new create]
   def index
-    @itens = Item.all
+    @items = Item.all
   end
 
   def show
@@ -13,8 +14,10 @@ class ItensController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @user = current_user
+    @item.user = @user
     if @item.save
-      redirect_to @item
+      redirect_to item_path(@item)
     else
       render :new
     end
@@ -28,5 +31,9 @@ class ItensController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :description, :price)
+  end
+
+  def set_user
+    @user = current_user
   end
 end
