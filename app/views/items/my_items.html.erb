@@ -1,6 +1,19 @@
-<h1>My items</h1>
-<% @items.each do |item| %>
-<%= item.name %>
-<%= link_to 'Edit', edit_item_path(item) %>
-<%= link_to 'remove', item_path(item), method: :delete, data: {confirm: 'Are you sure?'} %>
-<% end %>
+<div class="container mt-4">
+  <h1>My items</h1>
+  <div class="card-product m-4">
+    <% @items.each do |item| %>
+      <%= image_tag 'tool.png' %>
+      <div class="m-4">
+        <%= item.name %>
+                <%# EDIT NAO TA FUNCIONANDO GENTE MAS TEM FONT AWESOME %>
+        <%= link_to edit_item_path(item), method: :edit do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+        <%= link_to item_path(item), method: :delete, data: {confirm: 'Are you sure?'} do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
+      </div>
+    <% end %>
+    <br>
+  </div>
+</div>
