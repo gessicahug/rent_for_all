@@ -1,4 +1,12 @@
-<h1>Items</h1>
+<h1 class="text-center mt-5">Find the item you need:</h1>
+<div class="container mt-5 mb-5">
 <% @items.each do |item| %>
-<%= item.name %>
+<div class="card-product m-3">
+  <%= image_tag 'tool.png' %>
+  <div class="card-product-infos">
+    <h2><%=item.name%></h2>
+    <p><%=item.description%> <strong>Valor de aluguel por dia : R$<%=item.price%></strong></p>
+  </div>
+</div>
 <% end %>
+</div>
