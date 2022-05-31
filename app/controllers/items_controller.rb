@@ -1,11 +1,12 @@
 class ItemsController < ApplicationController
   before_action :set_user, only: %i[new create]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
   def index
     @items = Item.all
   end
 
   def show
-    @item = Item.find(params[:id])
+
   end
 
   def new
@@ -25,7 +26,29 @@ class ItemsController < ApplicationController
 
   def search
     @search = params[:search][:query]
-  end 
+  end
+
+  def my_items
+    @items = Item.where(user: current_user)
+  end
+
+  def edit
+
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to @item, notice: 'Item was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @item.destroy
+    redirect_to my_items_items_path, notice: 'Item was successfully destroyed.'
+  end
+
 
   private
 
@@ -35,5 +58,9 @@ class ItemsController < ApplicationController
 
   def set_user
     @user = current_user
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 end
