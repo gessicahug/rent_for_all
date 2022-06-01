@@ -285,7 +285,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   faker!
-  font-awesome-sass (~> 5.6.1)
+  font-awesome-sass
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)

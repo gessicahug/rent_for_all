@@ -6,53 +6,48 @@
     <p>Find whatever you need</p>
   </div>
 </div>
-
-<div class="container mt-4">
-  <div class="d-flex">
-    <div class="col-lg-6 col-md-6 col-sm-12">
-      <p class="p-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p class="p-4"><%= link_to "Sign-in", new_user_session_path, class: "btn btn-primary w-40 m-2"%><%= link_to "More Info", "#", class: "btn btn-warning w-40 m-2"%></p>
+<div class="container w-75 mb-5">
+  <div class="row">
+    <div class="col-2">
+      <%= link_to root_path  do %>
+        <i class="fas fa-futbol"></i>
+      <% end %>
     </div>
-
-    <div class="col-lg-6 col-md-6 col-sm-0">
-      <img src="https://picsum.photos/350" alt="item" class="p-4">
+    <div class="col-2">
+      <%= link_to root_path  do %>
+        <i class="fas fa-wrench"></i>
+      <% end %>
     </div>
-
+    <div class="col-2">
+      <%= link_to root_path  do %>
+        <i class="fas fa-laptop"></i>
+      <% end %>
+    </div>
+    <div class="col-2">
+      <%= link_to root_path  do %>
+        <i class="fas fa-camera"></i>
+      <% end %>
+    </div>
+    <div class="col-2">
+      <%= link_to root_path  do %>
+        <i class="fas fa-guitar"></i>
+      <% end %>
+    </div>
+    <div class="col-2">
+      <%= link_to root_path  do %>
+        <i class="fas fa-asterisk"></i>
+      <% end %>
+    </div>
   </div>
-</div>
-
-<div class="container mt-4 ">
-  <div class="d-flex">
-
-    <div class="col-lg-6 col-md-6 col-sm-12">
-      <div class="p-4">
-        <h3>New Items For Rent Near You</h3>
-        <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <div class="card-product-infos">
-            <h2>Product name <%#= product.name %></h2>
-            <p>Product description <%#= product.info %></p>
-            <p>Price $99.00 <%#= product.price %> </p>
-          </div>
-        </div>
+  <h2 class="mt-5">ULTIMOS ITENS PUBLICADOS</h2>
+  <div class="cards mt-3">
+    <% @items.last(6).each do |item| %>
+    <%= link_to item_path(item), class: 'text-decoration-none' do  %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <h3 class="text-center"><%= item.name %></h3>
       </div>
-    </div>
-
-
-    <div class="col-lg-6 col-md-6 col-sm-12">
-      <div class="p-4">
-        <h3>For Limited Time</h3>
-        <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-            <div class="card-product-infos">
-              <h2>Product name <%#= product.name %></h2>
-              <p>Product description <%#= product.info %></p>
-              <p>Price $99.00 <%#= product.price %> </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <% end %>
+    <%end%>
   </div>
 
 </div>
