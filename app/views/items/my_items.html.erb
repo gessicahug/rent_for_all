@@ -6,10 +6,10 @@
       <div class="m-4">
         <%= item.name %>
         <%= link_to edit_item_path(item) do %>
-          <i class="fas fa-edit"></i>
+          <i class="fas fa-edit p-1"></i>
         <% end %>
         <%= link_to item_path(item), method: :delete, data: {confirm: 'Are you sure?'} do %>
-          <i class="fas fa-trash"></i>
+          <i class="fas fa-trash p-1"></i>
         <% end %>
       </div>
     <% end %>
