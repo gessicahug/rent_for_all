@@ -34,7 +34,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -49,7 +48,6 @@ class ItemsController < ApplicationController
     @item.destroy
     redirect_to my_items_items_path, notice: 'Item was successfully destroyed.'
   end
-
 
   private
 
