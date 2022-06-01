@@ -1,17 +1,17 @@
 <div class="container mt-4 p-4">
   <h1>My items</h1>
-  <div class="card-product my-items">
-    <% @items.each do |item| %>
+  <% @items.each do |item| %>
+    <div class="card-product my-items mt-2">
       <%= image_tag 'tool.png' %>
       <div class="card-info m-4">
         <%= item.name %>
-        <%= link_to edit_item_path(item) do %>
-          <i class="fas fa-edit p-1"></i>
-        <% end %>
         <%= link_to item_path(item), method: :delete, data: {confirm: 'Are you sure?'} do %>
           <i class="fas fa-trash p-1"></i>
         <% end %>
+        <%= link_to edit_item_path(item) do %>
+          <i class="fas fa-edit p-1"></i>
+        <% end %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
