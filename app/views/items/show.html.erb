@@ -4,26 +4,14 @@
 <div class="card-product m-3">
   <%= image_tag 'tool.png' %>
   <div class="card-product-infos">
-    <h2><%=item.name%></h2>
-    <p><%=item.description%> <strong>Valor de aluguel por dia : R$<%=item.price%></strong></p>
+    <h2><%=@item.name%></h2>
+    <p><%=@item.description%> <strong>Valor de aluguel por dia : R$<%=@item.price%></strong></p>
   </div>
 </div>
 
 
-<% if policy(@item).edit? %>
-  <%= link_to "Edit Item", my_items_items_path(@item), class="btn btn-primary" %>
-<% end %>
 
-<%if policy(@item).destroy? %>
-  <%= link_to "Delete Item", my_items_items_path(@item), class="btn btn-primary" %>
-<%end%>
-<% else %>
-  <%= simple_form_for @user do |f| %>
-    <%= f.input :username %>
-    <%= f.input :password %>
-    <%= f.button :submit %>
-  <% end %>
-<%end%>
+
 <%# nao esquecer link to %>
 <%# adicionar um calendario para locação%>
 
