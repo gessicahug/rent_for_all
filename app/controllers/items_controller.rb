@@ -1,12 +1,11 @@
 class ItemsController < ApplicationController
   before_action :set_user, only: %i[new create]
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: %i[show edit update destroy]
   def index
     @items = Item.all
   end
 
   def show
-
   end
 
   def new
@@ -33,7 +32,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -48,7 +46,6 @@ class ItemsController < ApplicationController
     @item.destroy
     redirect_to my_items_items_path, notice: 'Item was successfully destroyed.'
   end
-
 
   private
 
