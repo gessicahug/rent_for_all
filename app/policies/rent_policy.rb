@@ -1,29 +1,24 @@
-class ItemPolicy < ApplicationPolicy
+class RentPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
   end
 
-  def show?
-    true
-  end
+  # quando clica no botão rent executa o meyto create
 
   def create?
     true
   end
 
-  def update?
-    owner_or_admin?
-  end
-
   def destroy?
-    owner_or_admin?
+    buyer?
   end
 
   private
 
-  def owner_or_admin?
+  def buyer?
     record.user == user
   end
+
 end
