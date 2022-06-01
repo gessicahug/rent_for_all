@@ -1,22 +1,23 @@
 class ItemsController < ApplicationController
   before_action :set_user, only: %i[new create]
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: %i[show edit update destroy]
   def index
-    @items = Item.all
+    @items = policy_scope(Item)
   end
 
   def show
-
   end
 
   def new
     @item = Item.new
+    authorize @item
   end
 
   def create
     @item = Item.new(item_params)
     @user = current_user
     @item.user = @user
+    authorize @item
     if @item.save
       redirect_to item_path(@item)
     else
@@ -29,7 +30,7 @@ class ItemsController < ApplicationController
   end
 
   def my_items
-    @items = Item.where(user: current_user)
+    @items = policy_scope(Item).where(user: current_user)
   end
 
   def edit
@@ -62,5 +63,6 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+    authorize @item
   end
 end

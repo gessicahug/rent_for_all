@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     collection do
       get :my_items
     end
-    resources :rents, only: %i[new create]
+    resources :rents, only: %i[create]
   end
   resources :rents, only: %i[index destroy]
 end

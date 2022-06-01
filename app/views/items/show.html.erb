@@ -1,2 +1,7 @@
-
-<h1><%= @item.name %></h1>
+<div class="container">
+  <h1><%= @item.name %></h1>
+  <%#<img src="@item.image" alt="<%= @item.name %>
+  <% unless @item.user == current_user%>
+    <%= link_to "Rent", item_rents_path(@item), method: :post, data: {confirm: "Rent #{@item.name}?"}, class: "btn btn-success" %>
+  <% end %>
+</div>
