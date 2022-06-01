@@ -1,1 +1,12 @@
-<p>oi</p>
+<div class="container mt-4">
+  <h1>Meus itens que aluguei</h1>
+  <div class="card-product m-4">
+    <% @rents.each do |rent| %>
+      <%= image_tag 'tool.png' %>
+      <div class="m-4">
+        <%= rent.item.name %>
+      </div>
+    <% end %>
+    <br>
+  </div>
+</div>
