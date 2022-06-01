@@ -4,20 +4,25 @@ class RentsController < ApplicationController
     @rents = Rent.all
   end
 
-  def new
-    @rent = Rent.new
-  end
+  # alugar
+  # def new
+  #   @rent = Rent.new
+  # end
 
   def create
-    @rent = Rent.new(rent_params)
-    @rent.item = @item
+    @rent = Rent.new(item: @item, user: current_user)
+    authorize @rent
+    # @rent.item = @item
+    # @rent.user = current_user
     if @rent.save
       @rent.item.rented = true
-      redirect_to item_path(@item)
+      redirect_to item_path(@item), notice: "#{@item.name} was rent"
     else
       render :new
     end
   end
+
+  # cancelar compra
 
   def destroy
     @rent = Rent.find(params[:id])
@@ -27,10 +32,6 @@ class RentsController < ApplicationController
   end
 
   private
-
-  def rent_params
-    params.require(:rent).permit(:item_id, :user_id)
-  end
 
   def set_item
     @item = Item.find(params[:item_id])

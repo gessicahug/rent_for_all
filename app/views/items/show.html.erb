@@ -1,3 +1,4 @@
+
 <h1><%= @item.name %></h1>
 
 
@@ -9,10 +10,15 @@
   </div>
 </div>
 
+<% if policy(@item).edit? %>
+  <%= link_to "Edit Item", edit_item_path(@item), class: "btn btn-primary" %>
+<% end %>
 
+<%if policy(@item).destroy? %>
+  <%= link_to "Delete Item", item_path(@item), method: 'DELETE', data: {confirm: 'Are you sure?'}, class: "btn btn-primary" %>
+<% else %>
+   <%= link_to "Rent", item_rents_path(@item), method: :post, data: {confirm: "Rent #{@item.name}?"}, class: "btn btn-success" %>
+<%end %>
 
-
-<%# nao esquecer link to %>
-<%# adicionar um calendario para locação%>
 
 <%= link_to 'Items', root_path(@item) %>
