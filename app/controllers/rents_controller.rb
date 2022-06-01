@@ -1,7 +1,7 @@
 class RentsController < ApplicationController
   before_action :set_item, only: %i[new create]
   def index
-    @rents = Rent.all
+    @rents = policy_scope(Rent)
   end
 
   # alugar
