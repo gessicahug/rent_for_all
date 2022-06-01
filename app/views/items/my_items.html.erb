@@ -1,7 +1,7 @@
 <div class="container mt-4 p-4">
   <h1>My items</h1>
-  <div class="card-product my-items">
-    <% @items.each do |item| %>
+  <% @items.each do |item| %>
+    <div class="card-product my-items m-2">
       <%= image_tag 'tool.png' %>
       <div class="card-info m-4">
         <%= item.name %>
@@ -12,6 +12,6 @@
           <i class="fas fa-trash p-1"></i>
         <% end %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
