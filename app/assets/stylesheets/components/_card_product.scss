@@ -5,6 +5,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  color: black;
 }
 
 .card-product img {
@@ -29,4 +30,13 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.my-items .fas {
+  font-size: 20px;
+}
+
+.card-product .my-items{
+  display: flex;
+  flex-direction: column;
 }
