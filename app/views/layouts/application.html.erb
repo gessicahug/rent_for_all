@@ -15,11 +15,12 @@
   <body>
     <% if current_page?(new_user_password_path) || current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
       <%= '' %>
+      <%= yield %>
     <% else %>
       <%= render 'shared/navbar' %>
+      <%= yield %>
+      <%= render 'shared/footer' %>
     <% end %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
   </body>
 </html>
