@@ -1,7 +1,11 @@
-<div class="container">
-  <h1><%= @item.name %></h1>
+<div class="card-product">
   <%= cl_image_tag @item.photo.key, height: 300, width: 400, crop: :fill %>
+  <h1><%= @item.name %></h1>
   <% unless @item.user == current_user%>
     <%= link_to "Rent", item_rents_path(@item), method: :post, data: {confirm: "Rent #{@item.name}?"}, class: "btn btn-success" %>
   <% end %>
+  <div class="card-product-infos">
+    <h2><%=@item.description %></h2>
+    <%=@item.price %>
+    </div>
 </div>

@@ -4,14 +4,9 @@
 <div class="card-product m-3">
   <%= image_tag 'tool.png' %>
   <div class="card-product-infos">
+    <%= cl_image_tag @item.photo.key, height: 300, width: 400, crop: :fill %>
     <h2><%=item.name%></h2>
-    <p><%=item.description%> <strong>Valor de aluguel por dia : R$<%=item.price%></strong></p>
+    <p><%=item.description%> <strong> R$<%=item.price%>/por dia</strong></p>
   </div>
 </div>
 <% end %>
-
-<%= cl_image_tag("g9j7lzgh940myasmwd8i",
-      width: 400, height: 300, crop: :fill) %>
-
-</div>
-
