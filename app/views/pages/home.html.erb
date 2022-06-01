@@ -1,59 +1,51 @@
-<div class="container w-50">
-  <div class="card-category">
-    <div>
-      <h1>Rent For All</h1>
-    </div>
-    <div class="">
-      <p>Find whatever you need</p>
-    </div>
+<div class="card-category">
+  <div>
+    <h1>Rent For All</h1>
   </div>
-
-
-  <div class="row mt-5">
+  <div class="">
+    <p>Find whatever you need</p>
+  </div>
+</div>
+<div class="container w-75">
+  <div class="row">
     <div class="col-2">
-      <h2>ICONE1</h2>
+      <%= link_to root_path  do %>
+        <i class="fas fa-futbol"></i>
+      <% end %>
     </div>
     <div class="col-2">
-      <h2>ICONE2</h2>
+      <%= link_to root_path  do %>
+        <i class="fas fa-wrench"></i>
+      <% end %>
     </div>
     <div class="col-2">
-      <h2>ICONE3</h2>
+      <%= link_to root_path  do %>
+        <i class="fas fa-laptop"></i>
+      <% end %>
     </div>
     <div class="col-2">
-      <h2>ICONE4</h2>
+      <%= link_to root_path  do %>
+        <i class="fas fa-camera"></i>
+      <% end %>
     </div>
     <div class="col-2">
-      <h2>ICONE5</h2>
+      <%= link_to root_path  do %>
+        <i class="fas fa-guitar"></i>
+      <% end %>
     </div>
     <div class="col-2">
-      <h2>ICONE6</h2>
+      <%= link_to root_path  do %>
+        <i class="fas fa-asterisk"></i>
+      <% end %>
     </div>
   </div>
   <h2 class="mt-5">ULTIMOS ITENS PUBLICADOS</h2>
   <div class="cards mt-3">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      Breakfast
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-      Lunch
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      Dinner
-    </div>
-
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      Dinner
-    </div>
-
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      Dinner
-    </div>
-
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      Dinner
-    </div>
+    <% @items.last(6).each do |item| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <h3 class="text-center"><%= item.name %></h3>
+      </div>
+    <%end%>
   </div>
 
 </div>
