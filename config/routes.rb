@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :items do
     collection do
       get :my_items
+      get "/category/:category", to: "items#items_category", as: "items_category"
     end
     resources :rents, only: %i[create]
   end

@@ -1,10 +1,12 @@
-<div class="container mb-4 p-4">
+
+  <div class="container mb-4 p-4">
   <h2 class="ml-5 ">Criar item</h2>
   <%= simple_form_for @item do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :price %>
+    <%= f.input :category, collection: Item::CATEGORIES %>
     <%= f.button :submit, class: 'btn btn-primary w-100' %>
     <%= f.input :photo, as: :file %>
-    <% end %>
+  <% end %>
 </div>
