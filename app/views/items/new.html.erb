@@ -5,6 +5,7 @@
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :price %>
+    <%= f.input :category, collection: Item::CATEGORIES %>
     <%= f.input :photo, as: :file %>
     <%= f.button :submit, class: 'btn btn-primary w-100' %>
     <% end %>
