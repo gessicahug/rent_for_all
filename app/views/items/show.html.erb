@@ -1,8 +1,6 @@
 <h1><%= @item.name %></h1>
-
-
 <div class="card-product m-3">
-  <%= image_tag 'tool.png' %>
+  <%= cl_image_tag @item.photo.key, height: 300, width: 400, crop: :fill %>
   <div class="card-product-infos">
     <h2><%=@item.name%></h2>
     <p><%=@item.description%> <strong>Valor de aluguel por dia : R$<%=@item.price%></strong></p>

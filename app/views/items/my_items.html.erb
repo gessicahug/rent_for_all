@@ -2,7 +2,11 @@
   <h1>My items</h1>
   <% @items.each do |item| %>
     <div class="card-product my-items m-2">
-      <%= image_tag 'tool.png' %>
+      <% if item.photo.attached? %>
+        <%= cl_image_tag item.photo.key, height: 300, width: 400, crop: :fill %>
+      <%else%>
+        <%= image_tag 'tool.png' %>     
+      <%end%>
       <div class="card-info m-4">
         <%= item.name %>
         <%= link_to edit_item_path(item) do %>
