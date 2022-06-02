@@ -12,6 +12,9 @@ class RentsController < ApplicationController
   def create
     @rent = Rent.new(item: @item, user: current_user)
     authorize @rent
+    @rent.item.rented = true
+    @rent.save
+    redirect_to rents_path, notice: "#{@item.name} was rent"
     # @rent.item = @item
     # @rent.user = current_user
     if @rent.save
