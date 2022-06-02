@@ -2,7 +2,11 @@ class ItemsController < ApplicationController
   before_action :set_user, only: %i[new create]
   before_action :set_item, only: %i[show edit update destroy]
   def index
-    @items = policy_scope(Item)
+    if params[:query].present?
+      @items = policy_scope(Item).search_by_name(params[:query])
+    else
+      @items = policy_scope(Item)
+    end
   end
 
   def items_category
@@ -28,10 +32,6 @@ class ItemsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def search
-    @search = params[:search][:query]
   end
 
   def my_items
