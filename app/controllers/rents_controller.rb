@@ -16,7 +16,7 @@ class RentsController < ApplicationController
     # @rent.user = current_user
     if @rent.save
       @rent.item.rented = true
-      redirect_to item_path(@item), notice: "#{@item.name} was rent"
+      redirect_to rents_path, notice: "#{@item.name} was rent"
     else
       render :new
     end
