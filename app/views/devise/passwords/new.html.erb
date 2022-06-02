@@ -1,5 +1,5 @@
-<div class="container">
-  <h2 class="mt-5">Forgot your password?</h2>
+<div class="container mt-4 mb-4 p-4">
+  <h2 class="">Esqueceu sua senha?</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
     <%= f.error_notification %>
@@ -12,7 +12,7 @@
     </div>
     <div class="d-flex">
       <div class="form-actions">
-        <%= f.button :submit, "Send me reset password instructions", class: "btn btn-secondary" %>
+        <%= f.button :submit, "Mandar link para o email", class: "btn btn-secondary m-1" %>
       </div>
       <%= render "devise/shared/links" %>
     </div>
