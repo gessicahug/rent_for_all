@@ -1,16 +1,22 @@
-<div class="container mt-4 p-4">
-  <h1>My items</h1>
+<div class="container mb-4 p-4">
+  <h1>Meus Items</h1>
   <% @items.each do |item| %>
     <div class="card-product my-items m-2">
       <%= image_tag 'tool.png' %>
-      <div class="card-info m-4">
-        <%= item.name %>
-        <%= link_to edit_item_path(item) do %>
-          <i class="fas fa-edit p-1"></i>
-        <% end %>
-        <%= link_to item_path(item), method: :delete, data: {confirm: 'Are you sure?'} do %>
-          <i class="fas fa-trash p-1"></i>
-        <% end %>
+      <div class="card-info m-4 d-flex justify-content-between">
+        <div class="">
+          <h2><%= item.name %></h2>
+        </div>
+        <div class="">
+          <%= link_to edit_item_path(item) do %>
+            <i class="fas fa-edit p-1"></i>
+          <% end %>
+        </div>
+        <div class="">
+          <%= link_to item_path(item), method: :delete, data: {confirm: 'Are you sure?'} do %>
+            <i class="fas fa-trash p-1"></i>
+          <% end %>
+        </div>
       </div>
     </div>
   <% end %>

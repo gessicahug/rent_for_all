@@ -4,9 +4,6 @@ class Item < ApplicationRecord
   has_one_attached :photo
 
   CATEGORIES = %w[cameras eletronicos ferramentas esportes instrumentos]
-<<<<<<< Updated upstream
-  validates :category, presence: true, inclusion: { in: CATEGORIES }
-=======
 
   validates :category, presence: true, inclusion: { in: CATEGORIES }
   include PgSearch::Model
@@ -20,5 +17,4 @@ class Item < ApplicationRecord
   using: {
     tsearch: { prefix: true }
   }
->>>>>>> Stashed changes
 end

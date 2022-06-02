@@ -3,9 +3,6 @@ class ItemsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
 
   def index
-<<<<<<< Updated upstream
-    @items = policy_scope(Item)
-=======
     if params[:query].present?
       @items = policy_scope(Item).search_by_name(params[:query])
     elsif params[:category].present?
@@ -13,7 +10,6 @@ class ItemsController < ApplicationController
     else
       @items = policy_scope(Item)
     end
->>>>>>> Stashed changes
   end
 
   def items_category
@@ -39,10 +35,6 @@ class ItemsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def search
-    @search = params[:search][:query]
   end
 
   def my_items
