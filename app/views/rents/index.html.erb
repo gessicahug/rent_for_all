@@ -10,6 +10,8 @@
       <div class="m-4">
         <%= rent.item.name %>
       </div>
+      <%= link_to "Devolver", rent_path(rent), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-warning" %>
+
     </div>
   <% end %>
 </div>

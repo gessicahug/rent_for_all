@@ -31,9 +31,11 @@ class RentsController < ApplicationController
 
   def destroy
     @rent = Rent.find(params[:id])
-    @rent.item.rented = false
+    authorize @rent
+    @item.rented = false
+    @item.save
     @rent.destroy
-    redirect_to item_path(@rent.item)
+    redirect_to item_path(@rent.item), notice: "#{@rent.item.name} foi devolvido"
   end
 
   private
