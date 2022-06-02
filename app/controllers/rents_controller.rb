@@ -14,17 +14,9 @@ class RentsController < ApplicationController
     authorize @rent
     @rent.item.rented = true
     @rent.save
+    @item.rented = true
+    @item.save
     redirect_to rents_path, notice: "#{@item.name} was rent"
-    # @rent.item = @item
-    # @rent.user = current_user
-    if @rent.save
-      @item.rented = true
-      @item.save
-      @rent.item.rented = true
-      redirect_to item_path(@item), notice: "#{@item.name} was rent"
-    else
-      render :new
-    end
   end
 
   # cancelar compra
