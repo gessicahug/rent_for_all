@@ -24,6 +24,7 @@ class RentsController < ApplicationController
   def destroy
     @rent = Rent.find(params[:id])
     authorize @rent
+    @item = @rent.item
     @item.rented = false
     @item.save
     @rent.destroy
