@@ -10,10 +10,10 @@
   <% if policy(@item).edit? %>
     <%= link_to "Editar", edit_item_path(@item), class: "btn btn-secondary" %>
   <% end %>
-  <%if policy(@item).destroy? %>
+  <%if policy(@item).destroy? && @item.rented == false %>
     <%= link_to "Deletar", item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-warning" %>
-  <% else %>
+  <% elsif @item.rented == false %>
     <%= link_to "Alugue Agora", item_rents_path(@item), method: :post, data: {confirm: "Rent #{@item.name}?"}, class: "btn btn-success" %>
   <%end %>
-  <%= link_to 'Voltar', root_path(@item), class: "btn btn-secondary" %>
+  <%= link_to 'Voltar', items_path(@item), class: "btn btn-secondary" %>
 </div>
