@@ -5,6 +5,10 @@ class ItemPolicy < ApplicationPolicy
     end
   end
 
+  def items_category?
+    true
+  end
+
   def show?
     true
   end

@@ -5,6 +5,11 @@ class ItemsController < ApplicationController
     @items = policy_scope(Item)
   end
 
+  def items_category
+    @items_category = Item.where(category: params[:category])
+    authorize Item
+  end
+
   def show
   end
 
@@ -52,7 +57,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :price, :photo)
+    params.require(:item).permit(:name, :description, :price, :photo, :category)
   end
 
   def set_user
