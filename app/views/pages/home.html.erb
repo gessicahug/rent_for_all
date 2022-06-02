@@ -6,8 +6,8 @@
     <p>Encontre o que você precisa</p>
   </div>
 </div>
-<div class="container w-75 mb-5">
-  <div class="row">
+<div class="container w-75 pt-3 pb-5 mb-5">
+  <div class="row ms-5">
     <div class="col-2">
       <%= link_to items_path(category:'esportes') do %>
         <i class="fas fa-futbol"></i>
@@ -39,8 +39,8 @@
       <% end %>
     </div>
   </div>
-  <h2 class="mt-5">ULTIMOS ITENS PUBLICADOS</h2>
-  <div class="cards mt-3">
+  <h2 class="mt-5 ms-3">ULTIMOS ITENS PUBLICADOS</h2>
+  <div class="cards ms-3 mt-3">
     <% @items.last(6).each do |item| %>
     <%= link_to item_path(item), class: 'text-decoration-none' do  %>
       <div class="card-category" style="background-image:url(<%= cl_image_path(item.photo.key)%>)">
