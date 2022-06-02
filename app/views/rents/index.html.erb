@@ -1,12 +1,11 @@
 <div class="container mb-4 p-4">
   <h1>ITENS ALUGADOS:</h1>
-  <div class="card-product m-4">
-    <% @rents.each do |rent| %>
+  <% @rents.each do |rent| %>
+    <div class="card-product m-4">
       <%= image_tag 'tool.png' %>
       <div class="m-4">
         <%= rent.item.name %>
       </div>
-    <% end %>
-    <br>
-  </div>
+    </div>
+  <% end %>
 </div>
