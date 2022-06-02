@@ -4,11 +4,11 @@ class ItemsController < ApplicationController
 
   def index
     if params[:query].present?
-      @items = policy_scope(Item).search_by_name(params[:query])
+      @items = policy_scope(Item).where(rented: false).search_by_name(params[:query])
     elsif params[:category].present?
-      @items = policy_scope(Item).search_by_category(params[:category])
+      @items = policy_scope(Item).where(rented: false).search_by_category(params[:category])
     else
-      @items = policy_scope(Item)
+      @items = policy_scope(Item).where(rented: false)
     end
   end
 
