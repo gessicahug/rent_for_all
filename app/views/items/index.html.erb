@@ -1,5 +1,5 @@
   <div class="container pt-5 pb-3">
-  <h1 class="ps-5"> BUSCAR: </h1>
+  <h1 id="search"> BUSCAR: </h1>
   <div class="d-flex align-items-center">
     <div class="p-2 w-50">
       <%= form_tag items_path, method: :get do %>
@@ -15,7 +15,7 @@
     <% end %>
   </div>
 
-  <div class="row mb-5">
+  <div class="row ms-5 mb-5">
     <div class="col-2">
       <%= link_to items_path(category:'esportes')  do %>
         <i class="fas fa-futbol"></i>
@@ -50,7 +50,7 @@
 
   <% @items.each do |item| %>
     <%= link_to item_path(item), class: 'text-decoration-none' do  %>
-    <div class="card-product m-3">
+    <div class="card-product p-3 m-3">
       <% if item.photo.attached? %>
         <%= cl_image_tag item.photo.key, height: 300, width: 400, crop: :fill %>
       <%else%>
