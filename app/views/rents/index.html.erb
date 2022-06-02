@@ -1,8 +1,8 @@
-<div class="container mt-4">
-  <h1>Meus itens que aluguei</h1>
-  <div class="card-product m-4">
-    <% @rents.each do |rent| %>
-      <% if item.photo.attached? %>
+
+ <div class="container mb-4 p-4">
+  <h1>ITENS ALUGADOS:</h1>
+  <% @rents.each do |rent| %>
+   <% if item.photo.attached? %>
         <%= cl_image_tag item.photo.key, height: 300, width: 400, crop: :fill %>
       <%else%>
         <%= image_tag 'tool.png' %>     
@@ -10,7 +10,6 @@
       <div class="m-4">
         <%= rent.item.name %>
       </div>
-    <% end %>
-    <br>
-  </div>
+    </div>
+  <% end %>
 </div>

@@ -1,19 +1,66 @@
-<h1 class="text-center mt-5">ENCONTRE O QUE VOCÊ PRECISA:</h1>
-<div class="container mt-5 mb-5 pt-3 pb-3">
-<% @items.each do |item| %>
-<%= link_to item_path(item), class: 'text-decoration-none' do  %>
-<div class="card-product m-3">
-  <% if item.photo.attached? %>
-      <%= cl_image_tag item.photo.key, height: 300, width: 400, crop: :fill %>
-    <%else%>
-      <%= image_tag 'tool.png' %>     
-    <%end%>
-  <div class="card-product-infos">
-    <h2><%=item.name%></h2>
-    <p><%=item.description%> <strong>Valor de aluguel por dia : R$<%=item.price%></strong></p>
+  <div class="container pt-5 pb-3">
+  <h1 class="ps-5"> BUSCAR: </h1>
+  <div class="d-flex align-items-center">
+    <div class="p-2 w-50">
+      <%= form_tag items_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "search ms-5 ps-3",
+        placeholder: "eletrônicos, câmeras, notebooks..."
+      %>
+    </div>
+    <div class="p-2">
+     <%= submit_tag "OK", class: "button fill ms-5" %>
+    </div>
+    <% end %>
   </div>
 
-</div>
-<% end %>
-<% end %>
+  <div class="row mb-5">
+    <div class="col-2">
+      <%= link_to root_path  do %>
+        <i class="fas fa-futbol"></i>
+      <% end %>
+    </div>
+    <div class="col-2">
+      <%= link_to root_path  do %>
+        <i class="fas fa-wrench"></i>
+      <% end %>
+    </div>
+    <div class="col-2">
+      <%= link_to root_path  do %>
+        <i class="fas fa-laptop"></i>
+      <% end %>
+    </div>
+    <div class="col-2">
+      <%= link_to root_path  do %>
+        <i class="fas fa-camera"></i>
+      <% end %>
+    </div>
+    <div class="col-2">
+      <%= link_to root_path  do %>
+        <i class="fas fa-guitar"></i>
+      <% end %>
+    </div>
+    <div class="col-2">
+      <%= link_to root_path  do %>
+        <i class="fas fa-asterisk"></i>
+      <% end %>
+    </div>
+  </div>
+
+    <% @items.each do |item| %>
+      <%= link_to item_path(item), class: 'text-decoration-none' do  %>
+      <div class="card-product m-3">
+        <% if item.photo.attached? %>
+        <%= cl_image_tag item.photo.key, height: 300, width: 400, crop: :fill %>
+      <%else%>
+        <%= image_tag 'tool.png' %>     
+      <%end%>
+      <div class="card-product-infos">
+        <h2><%=item.name%></h2>
+        <p><%=item.description%> <strong>Valor de aluguel por dia : R$<%=item.price%></strong></p>
+      </div>
+     </div>
+   <% end %>
+  <% end %>
 </div>

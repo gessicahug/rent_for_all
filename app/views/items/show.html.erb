@@ -1,18 +1,19 @@
-<h1><%= @item.name %></h1>
+
+<div class="container mt-4 mb-4 p-4">
+  <h1><%= @item.name %></h1>
 <div class="card-product m-3">
   <%= cl_image_tag @item.photo.key, height: 300, width: 400, crop: :fill %>
   <div class="card-product-infos">
     <h2><%=@item.name%></h2>
     <p><%=@item.description%> <strong>Valor de aluguel por dia : R$<%=@item.price%></strong></p>
   </div>
+  <% if policy(@item).edit? %>
+    <%= link_to "Editar", edit_item_path(@item), class: "btn btn-secondary" %>
+  <% end %>
+  <%if policy(@item).destroy? %>
+    <%= link_to "Deletar", item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-warning" %>
+  <% else %>
+    <%= link_to "Alugue Agora", item_rents_path(@item), method: :post, data: {confirm: "Rent #{@item.name}?"}, class: "btn btn-success" %>
+  <%end %>
+  <%= link_to 'Voltar', root_path(@item), class: "btn btn-secondary" %>
 </div>
-
-<% if policy(@item).edit? %>
-  <%= link_to "Edit Item", edit_item_path(@item), class: "btn btn-primary" %>
-<% end %>
-<%if policy(@item).destroy? %>
-  <%= link_to "Delete Item", item_path(@item), method: 'DELETE', data: {confirm: 'Are you sure?'}, class: "btn btn-primary" %>
-<% else %>
-   <%= link_to "Rent", item_rents_path(@item), method: :post, data: {confirm: "Rent #{@item.name}?"}, class: "btn btn-success" %>
-<%end %>
-<%= link_to 'Items', root_path(@item) %>
