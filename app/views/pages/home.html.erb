@@ -11,7 +11,7 @@
   </div>
   <h2 class="mt-5 ms-3">Últimos itens publicados</h2>
   <div class="cards card-item ms-3 mt-3">
-    <% @items.last(6).each do |item| %>
+    <% @items.last(9).each do |item| %>
     <%= link_to item_path(item), class: 'text-decoration-none' do  %>
       <div class="card-trip">
       <%=cl_image_tag(item.photo.key)%>
