@@ -4,7 +4,7 @@ Rent For All is an App developed for people who wants to rent and to put items t
 
 <a href="https://rent-for-all.herokuapp.com/"> Link to Heroku </a>
 
-We used Ruby on Rails, Bootstrap and JavasScript to create the application.
+We used Ruby on Rails, Bootstrap and JavaScript to create the application.
 
 <p align="left">
 <a href="https://www.ruby-lang.org/en/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/ruby-colored.svg" width="36" height="36" alt="Ruby" /></a>
