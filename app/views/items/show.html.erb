@@ -6,21 +6,21 @@
       <h2><%=@item.name%></h2>
       <p><%=@item.description%> <strong>VALOR/DIA: R$<%=@item.price%></strong></p>
     </div>
-
+      <% unless policy(@item).edit? %>
       <div class="form-wrapper" style="width: 250px; margin: 0 auto;">
         <p class="mb-1 ms-1">SELECIONE O PERÍODO:</p>
         <%= simple_form_for :search, method: "get" do |f| %>
           <%= f.input :starts_at, label: false, as: :string, required: false, input_html: {class: "datepicker mt-3", id: "range_start"} %>
         <% end %>
       </div>
-
+      <%end%>
   </div>
 
   <% if policy(@item).edit? %>
-    <%= link_to "EDITAR", edit_item_path(@item), class: "btn btn-secondary" %>
+    <%= link_to "EDITAR", edit_item_path(@item), class: "btn btn-secondary ms-3" %>
   <% end %>
   <%if policy(@item).destroy? && @item.rented == false %>
-    <%= link_to "DELETE", item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-warning" %>
+    <%= link_to "DELETAR", item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-warning ms-3" %>
   <% elsif @item.rented == false %>
     <%= link_to "ALUGUE", item_rents_path(@item), method: :post, data: {confirm: "Rent #{@item.name}?"}, class: "btn btn-success ms-3" %>
   <%end %>
