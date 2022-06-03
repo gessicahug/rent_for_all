@@ -4,11 +4,6 @@ class RentsController < ApplicationController
     @rents = policy_scope(Rent)
   end
 
-  # alugar
-  # def new
-  #   @rent = Rent.new
-  # end
-
   def create
     @rent = Rent.new(item: @item, user: current_user)
     authorize @rent
@@ -18,8 +13,6 @@ class RentsController < ApplicationController
     @item.save
     redirect_to rents_path, notice: "#{@item.name} was rent"
   end
-
-  # cancelar compra
 
   def destroy
     @rent = Rent.find(params[:id])
