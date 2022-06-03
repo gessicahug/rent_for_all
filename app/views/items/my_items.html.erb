@@ -1,7 +1,7 @@
 <div class="container mb-4 p-4">
   <h1>Meus Items</h1>
   <% @items.each do |item| %>
-    <div class="card-product my-items m-2">
+    <div class="card-product my-items p-3 mb">
       <%= cl_image_tag item.photo.key%>
       <div class="card-info m-4 d-flex">
         <div class="">
