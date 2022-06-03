@@ -6,8 +6,9 @@ class Item < ApplicationRecord
   CATEGORIES = %w[cameras eletronicos ferramentas esportes instrumentos]
 
   validates :category, presence: true, inclusion: { in: CATEGORIES }
-  include PgSearch::Model
+  validates :photo, presence: true
 
+  include PgSearch::Model
   pg_search_scope :search_by_name, against: :name,
   using: {
     tsearch: { prefix: true }
