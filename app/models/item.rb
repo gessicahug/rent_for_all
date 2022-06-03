@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   has_many :rents, dependent: :destroy
   has_one_attached :photo
 
-  CATEGORIES = %w[cameras eletronicos ferramentas esportes instrumentos]
+  CATEGORIES = %w[Câmeras Eletrônicos Ferramentas Esportes Instrumentos]
 
   validates :category, presence: true, inclusion: { in: CATEGORIES }
   validates :photo, presence: true
