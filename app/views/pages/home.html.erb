@@ -7,37 +7,7 @@
   </div>
 </div>
 <div class="container w-75 pt-3 pb-5 mb-5">
-  <div class="row">
-    <div class="col-4 col-sm-2 text-center">
-      <%= link_to items_path(category:'esportes') do %>
-        <i class="fas fa-futbol"></i>
-      <% end %>
-    </div>
-    <div class="col-4 col-sm-2 text-center">
-      <%= link_to items_path(category:'ferramentas')  do %>
-        <i class="fas fa-wrench"></i>
-      <% end %>
-    </div>
-    <div class="col-4 col-sm-2 text-center">
-      <%= link_to items_path(category:'eletronicos')  do %>
-        <i class="fas fa-laptop"></i>
-      <% end %>
-    </div>
-    <div class="col-4 col-sm-2 text-center">
-      <%= link_to items_path(category:'cameras')  do %>
-        <i class="fas fa-camera"></i>
-      <% end %>
-    </div>
-    <div class="col-4 col-sm-2 text-center">
-      <%= link_to items_path(category:'instrumentos') do %>
-        <i class="fas fa-guitar"></i>
-      <% end %>
-    </div>
-    <div class="col-4 col-sm-2 text-center">
-      <%= link_to items_path  do %>
-        <i class="fas fa-asterisk"></i>
-      <% end %>
-    </div>
+  <%= render 'shared/categories' %>
   </div>
   <h2 class="mt-5">ULTIMOS ITENS PUBLICADOS</h2>
   <div class="cards mt-3">
