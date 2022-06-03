@@ -1,19 +1,28 @@
 <div class="container mt-4 mb-4 p-4">
-  <h1><%= @item.name %></h1>
+  <h1 class= "ms-3"><%= @item.name %></h1>
   <div class="card-product p-3 m-3">
     <%= cl_image_tag @item.photo.key%>
     <div class="card-product-infos">
       <h2><%=@item.name%></h2>
       <p><%=@item.description%> <strong>VALOR/DIA: R$<%=@item.price%></strong></p>
     </div>
+
+      <div class="form-wrapper" style="width: 250px; margin: 0 auto;">
+        <p class="mb-1 ms-1">SELECIONE O PERÍODO:</p>
+        <%= simple_form_for :search, method: "get" do |f| %>
+          <%= f.input :starts_at, label: false, as: :string, required: false, input_html: {class: "datepicker mt-3", id: "range_start"} %>
+        <% end %>
+      </div>
+
   </div>
+
   <% if policy(@item).edit? %>
-    <%= link_to "Editar", edit_item_path(@item), class: "btn btn-secondary" %>
+    <%= link_to "EDITAR", edit_item_path(@item), class: "btn btn-secondary" %>
   <% end %>
   <%if policy(@item).destroy? && @item.rented == false %>
-    <%= link_to "Deletar", item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-warning" %>
+    <%= link_to "DELETE", item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-warning" %>
   <% elsif @item.rented == false %>
-    <%= link_to "Alugue Agora", item_rents_path(@item), method: :post, data: {confirm: "Rent #{@item.name}?"}, class: "btn btn-success" %>
+    <%= link_to "ALUGUE", item_rents_path(@item), method: :post, data: {confirm: "Rent #{@item.name}?"}, class: "btn btn-success ms-3" %>
   <%end %>
-  <%= link_to 'Voltar', items_path(@item), class: "btn btn-secondary" %>
+  <%= link_to 'VOLTAR', items_path(@item), class: "btn btn-secondary ms-3" %>
 </div>
