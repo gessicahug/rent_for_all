@@ -16,36 +16,7 @@
   </div>
 
   <div class="row ms-5 mb-5">
-    <div class="col-2">
-      <%= link_to items_path(category:'Esportes')  do %>
-        <i class="fas fa-futbol"></i>
-      <% end %>
-    </div>
-    <div class="col-2">
-      <%= link_to items_path(category:'Ferramentas')  do %>
-        <i class="fas fa-wrench"></i>
-      <% end %>
-    </div>
-    <div class="col-2">
-      <%= link_to items_path(category:'Eletrônicos')  do %>
-        <i class="fas fa-laptop"></i>
-      <% end %>
-    </div>
-    <div class="col-2">
-      <%= link_to items_path(category:'Câmeras')  do %>
-        <i class="fas fa-camera"></i>
-      <% end %>
-    </div>
-    <div class="col-2">
-      <%= link_to items_path(category:'Instrumentos') do %>
-        <i class="fas fa-guitar"></i>
-      <% end %>
-    </div>
-    <div class="col-2">
-      <%= link_to items_path  do %>
-        <i class="fas fa-asterisk"></i>
-      <% end %>
-    </div>
+    <%= render 'shared/categories' %>
   </div>
 
   <% @items.each do |item| %>
