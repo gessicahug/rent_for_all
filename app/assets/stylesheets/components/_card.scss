@@ -38,3 +38,68 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+.card-trip-infos {
+  background: rgb(241, 241, 241);
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.card-trip h3 {
+  font-size: 10px;
+  font-weight: light;
+  margin: 0;
+  color: rgb(65, 64, 64);
+}
+
+.card-trip h4 {
+  font-size: 10px;
+  font-weight: light;
+  margin: 0;
+  color: rgb(65, 64, 64);
+}
+
+.card-trip p {
+  font-size: 10px;
+  font-weight: light;
+  opacity: .7;
+  margin: 0;
+  color: rgb(65, 64, 64);
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+
+
