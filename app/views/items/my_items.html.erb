@@ -14,7 +14,7 @@
         <%= link_to "EDITAR", edit_item_path(item), class: "btn btn-secondary " %>
       <% end %>
       <%if policy(item).destroy? && item.rented == false %>
-        <%= link_to "DELETAR", item_path(item), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-warning " %>
+        <%= link_to "DELETAR", item_path(item), method: :delete, data: {confirm: 'Você tem certeza?'}, class: "btn btn-warning " %>
       <%end%>
     </div>
   <%end%>

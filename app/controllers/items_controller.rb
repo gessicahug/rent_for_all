@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to @item, notice: 'Item was successfully updated.'
+      redirect_to @item, notice: "O item #{@item.name} foi editado."
     else
       render :edit
     end
@@ -54,7 +54,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to my_items_items_path, notice: 'Item was successfully destroyed.'
+    redirect_to my_items_items_path, notice: "O item #{@item.name} foi deletado!"
   end
 
   private

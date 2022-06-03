@@ -20,9 +20,9 @@
     <%= link_to "EDITAR", edit_item_path(@item), class: "btn btn-secondary ms-3" %>
   <% end %>
   <%if policy(@item).destroy? && @item.rented == false %>
-    <%= link_to "DELETAR", item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-warning ms-3" %>
+    <%= link_to "DELETAR", item_path(@item), method: :delete, data: {confirm: 'Você tem certeza?'}, class: "btn btn-warning ms-3" %>
   <% elsif @item.rented == false %>
-    <%= link_to "ALUGUE", item_rents_path(@item), method: :post, data: {confirm: "Rent #{@item.name}?"}, class: "btn btn-success ms-3" %>
+    <%= link_to "ALUGUE", item_rents_path(@item), method: :post, data: {confirm: "Alugar #{@item.name}?"}, class: "btn btn-success ms-3" %>
   <%end %>
   <%= link_to 'VOLTAR', items_path(@item), class: "btn btn-secondary ms-3" %>
 </div>
