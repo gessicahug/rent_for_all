@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon position-relative">
   <div class = "row align-items-center m-2 w-100">
     <div class="col-5">
       <%= link_to root_path, class: "navbar-brand d-flex flex-row align-items-center" do %>
@@ -10,12 +10,10 @@
     </div>
 
     <div class="col-4">
-      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <div class="" id="navbarSupportedContent">
       <% if user_signed_in? %>
           <ul class="d-flex w-100 navbar-nav justify-content-end pe-5">
-            <li class="nav-item pe-5">
-              <%= link_to "ALUGUE UM ITEM", items_path, class: "nav-link" %>
-            </li>
+
 
             <li class="nav-item dropdown col-1">
             <% if current_user.photo.attached? %>
@@ -23,12 +21,17 @@
             <%else%>
               <%= image_tag "avatar_user.png", class: "avatar-bordered dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <%end%>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <div class="dropdown-menu dropdown-menu-end position-absolute" aria-labelledby="navbarDropdown">
+
                 <%= link_to "HOME", root_path, class: "dropdown-item" %>
+                <%= link_to "ALUGUE UM ITEM", items_path, class: "dropdown-item" %>
+
                 <%= link_to "ANUNCIAR", new_item_path, class: "dropdown-item" %>
                 <%= link_to "MEUS ITENS ALUGADOS", rents_path, class: "dropdown-item" %>
                 <%= link_to "MEUS ANUNCIOS", my_items_items_path, class: "dropdown-item" %>
                 <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+
+
               </div>
             </li>
           </ul>
