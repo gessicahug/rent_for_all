@@ -13,3 +13,43 @@
   border-radius: 5px;
   flex-direction: column;
 }
+
+.cards {
+  .card-content {
+  background-size: cover;
+  background-position: center;
+  height: 225px;
+  display: flex;
+  justify-content: end;
+  align-items: start;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  flex-direction: column;
+
+  .card-information{
+    background-color: white;
+    width: 75%;
+    height: 60px;
+    border-bottom-left-radius: 8px;
+    
+  }
+
+  .card-information-name {
+    font-size: 20px;
+    color: black;
+  }
+}
+
+.card-information-category {
+  font-size: 15px;
+  color: black;
+}
+
+.card-information-price {
+  font-size: 15px;
+  color: black;
+}
+}
+
