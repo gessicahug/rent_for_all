@@ -22,14 +22,14 @@
             <br>
             <p><%=item.description%></p>
           </div>
-          
+
           <h4 class="card-trip-pricing">R$<%=item.price%>/por dia</h4>
-          <% if current_user.photo.attached? %>
-              <%= cl_image_tag current_user.photo.key, gravity: :face, crop: :"thumb", width: 40, height: 40, class: "card-trip-user avatar-bordered-card"%>
+          <% if item.user.photo.attached? %>
+              <%= cl_image_tag item.user.photo.key, gravity: :face, crop: :"thumb", width: 40, height: 40, class: "card-trip-user avatar-bordered-card"%>
             <%else%>
               <%= image_tag "avatar_user.png", class: "card-trip-user avatar-bordered-card"%>
             <%end%>
-          
+
         </div>
         </div>
     <% end %>
