@@ -16,36 +16,7 @@
   </div>
 
   <div class="row ms-5 mb-5">
-    <div class="col-2">
-      <%= link_to items_path(category:'esportes')  do %>
-        <i class="fas fa-futbol"></i>
-      <% end %>
-    </div>
-    <div class="col-2">
-      <%= link_to items_path(category:'ferramentas')  do %>
-        <i class="fas fa-wrench"></i>
-      <% end %>
-    </div>
-    <div class="col-2">
-      <%= link_to items_path(category:'eletronicos')  do %>
-        <i class="fas fa-laptop"></i>
-      <% end %>
-    </div>
-    <div class="col-2">
-      <%= link_to items_path(category:'cameras')  do %>
-        <i class="fas fa-camera"></i>
-      <% end %>
-    </div>
-    <div class="col-2">
-      <%= link_to items_path(category:'instrumentos') do %>
-        <i class="fas fa-guitar"></i>
-      <% end %>
-    </div>
-    <div class="col-2">
-      <%= link_to items_path  do %>
-        <i class="fas fa-asterisk"></i>
-      <% end %>
-    </div>
+    <%= render 'shared/categories' %>
   </div>
 
   <% @items.each do |item| %>
@@ -58,7 +29,7 @@
       <%end%>
       <div class="card-product-infos">
         <h2><%=item.name%></h2>
-        <p><%=item.description%> <strong>Valor de aluguel por dia : R$<%=item.price%></strong></p>
+        <p><%=item.description%> <strong>VALOR/DIA: R$<%=item.price%></strong></p>
       </div>
      </div>
    <% end %>

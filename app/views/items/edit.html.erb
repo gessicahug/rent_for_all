@@ -1,11 +1,4 @@
-  <div class="container mt-4 mb-4 p-4">
-  <h2 class="">Editar</h2>
-  <%= simple_form_for @item do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.input :category, collection: Item::CATEGORIES %>
-    <%= f.button :submit, class: 'btn btn-primary w-100' %>
-    <%= f.input :photo, as: :file %>
-  <% end %>
+<div class="container mt-4 mb-4 p-4">
+  <h2 class="">EDITAR</h2>
+  <%= render 'shared/form' %>
 </div>

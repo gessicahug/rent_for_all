@@ -1,23 +1,21 @@
 <div class="container mb-4 p-4">
   <h1>Meus Items</h1>
   <% @items.each do |item| %>
-    <div class="card-product my-items m-2">
+    <div class="card-product my-items p-3 mb">
       <%= cl_image_tag item.photo.key%>
-      <div class="card-info m-4 d-flex justify-content-between">
+      <div class="card-info m-4 d-flex">
         <div class="">
           <h2><%= item.name %></h2>
         </div>
-        <div class="">
-          <%= link_to edit_item_path(item) do %>
-            <i class="fas fa-edit p-1"></i>
-          <% end %>
-        </div>
-        <div class="">
-          <%= link_to item_path(item), method: :delete, data: {confirm: 'Are you sure?'} do %>
-            <i class="fas fa-trash p-1"></i>
-          <% end %>
-        </div>
       </div>
     </div>
-  <% end %>
+    <div class="mb-3">
+      <% if policy(item).edit? %>
+        <%= link_to "EDITAR", edit_item_path(item), class: "btn btn-secondary " %>
+      <% end %>
+      <%if policy(item).destroy? && item.rented == false %>
+        <%= link_to "DELETAR", item_path(item), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-warning " %>
+      <%end%>
+    </div>
+  <%end%>
 </div>
