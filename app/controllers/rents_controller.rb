@@ -11,7 +11,7 @@ class RentsController < ApplicationController
     @rent.save
     @item.rented = true
     @item.save
-    redirect_to rents_path, notice: "#{@item.name} was rent"
+    redirect_to rents_path, notice: "O item #{@item.name} foi alugado."
   end
 
   def destroy
@@ -21,7 +21,7 @@ class RentsController < ApplicationController
     @item.rented = false
     @item.save
     @rent.destroy
-    redirect_to item_path(@rent.item), notice: "#{@rent.item.name} foi devolvido"
+    redirect_to item_path(@rent.item), notice: "O item #{@rent.item.name} foi devolvido."
   end
 
   private
